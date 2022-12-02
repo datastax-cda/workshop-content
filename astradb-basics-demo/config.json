@@ -1,0 +1,30 @@
+{
+    "workshopSubject": "pcf-pas-demo",
+    "modules": [
+        {
+            "type": "demos",
+            "content": [
+                {
+                    "name": "Introduction",
+                    "filename": "pcf-pas-demo/demos/lab-0-introduction"
+                },
+                {
+                    "name": "cf push",
+                    "filename": "pcf-pas-demo/demos/lab-1-cf-push.en.md"
+                },
+                {
+                    "name": "Logging and Scaling",
+                    "filename": "lab-2-logging-scale-ha.en.md"
+                },
+                {
+                    "name": "Binding Services",
+                    "filename": "lab-3-binding-services.en.md"
+                },
+                {
+                    "name": "Blue/Green Deployment",
+                    "filename": "lab-4-blue-green-deployment.en.md"
+                }
+            ]
+        }
+    ]
+}
