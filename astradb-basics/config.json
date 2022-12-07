@@ -1,0 +1,23 @@
+{
+    "workshopSubject": "Astra DB basics",
+    "modules": [
+        {
+            "type": "concepts",
+            "content": [
+                {
+                    "name": "Introduction to Astra DB",
+                    "filename": "astradb-basics/demos/introduction"
+                }
+            ]
+        },
+        {
+            "type": "demos",
+            "content": [
+                {
+                    "name": "Create an Astra DB account",
+                    "filename": "astradb-basics/demos/lab-1-create-astra-account.en.md"
+                }
+            ]
+        }
+    ]
+}
