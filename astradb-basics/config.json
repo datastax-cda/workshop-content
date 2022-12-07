@@ -16,6 +16,10 @@
                 {
                     "name": "Create an Astra DB account",
                     "filename": "astradb-basics/demos/lab-1-create-astra-account"
+                },
+                {
+                    "name": "Create a Tab;e",
+                    "filename": "astradb-basics/demos/lab-2-create-a-table"
                 }
             ]
         }
