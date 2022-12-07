@@ -55,7 +55,7 @@
             "content": [
                 {
                     "name": "Create an Astra DB account",
-                    "filename": "astradb-basics/demos/lab-1-create-astra-account.en.md"
+                    "filename": "astradb-basics/demos/lab-1-create-astra-account"
                 }
             ]
         }

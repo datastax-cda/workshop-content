@@ -7,46 +7,6 @@
                 {
                     "name": "Introduction to Astra DB",
                     "filename": "astradb-basics/concepts/introduction"
-                },
-                {
-                    "name": "Tables and Keys",
-                    "filename": "astradb-basics/concepts/table-and-keys"
-                },
-                {
-                    "name": "Replication and Consistency",
-                    "filename": "astradb-basics/concepts/replication-and-consistency"
-                },
-                {
-                    "name": "Advance Queries",
-                    "filename": "astradb-basics/concepts/advance-queries"
-                },
-                {
-                    "name": "Complex Types",
-                    "filename": "astradb-basics/concepts/complex-types"
-                },
-                {
-                    "name": "Other Types",
-                    "filename": "astradb-basics/concepts/other-types"
-                },
-                {
-                    "name": "Data Modeling",
-                    "filename": "astradb-basics/concepts/data-modeling"
-                },
-                {
-                    "name": "Security",
-                    "filename": "astradb-basics/concepts/security"
-                },
-                {
-                    "name": "Data Loading",
-                    "filename": "astradb-basics/concepts/data-loading"
-                },
-                {
-                    "name": "Stargate",
-                    "filename": "astradb-basics/concepts/stargate"
-                },
-                {
-                    "name": "Drivers",
-                    "filename": "astradb-basics/concepts/java-drivers"
                 }
             ]
         },
@@ -55,7 +15,7 @@
             "content": [
                 {
                     "name": "Create an Astra DB account",
-                    "filename": "astradb-basics/demos/lab-1-create-astra-account.en.md"
+                    "filename": "astradb-basics/demos/lab-1-create-astra-account"
                 }
             ]
         }
