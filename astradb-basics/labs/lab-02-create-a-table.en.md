@@ -1,4 +1,4 @@
-# Labs - Create a Table
+# Labs 02 - Create a Table
 
 **Estimated Time:** 10 minutes
 
