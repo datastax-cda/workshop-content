@@ -19,4 +19,5 @@ This is the primary DataStax workshop content repo. Each folder represents a gro
 ## TODO
 * Create a number of reusable workshop *config.json*
 * Create standard invite emails
-* Define the standard readme for each workshop folder. 
+* Define the standard readme for each workshop folder.
+* Make sure James can push to this repo. 
