@@ -1,0 +1,27 @@
+{
+  "workshopSubject": "Astra DB Observability",
+  "modules": [
+    {
+      "type": "concepts",
+      "content": [
+        {
+          "name": "Introduction to Astra DB Observability",
+          "filename": "astradb-observability/concepts/introduction"
+        }
+      ]
+    },
+    {
+      "type": "demos",
+      "content": [
+        {
+          "name": "Create an Astra DB account",
+          "filename": "astradb-basics/demos/lab-1-create-astra-account"
+        },
+        {
+          "name": "Create a Table",
+          "filename": "astradb-basics/demos/lab-2-create-a-table"
+        }
+      ]
+    }
+  ]
+}
