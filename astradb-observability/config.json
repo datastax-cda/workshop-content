@@ -1,5 +1,7 @@
 {
   "workshopSubject": "Astra DB Observability",
+  "workshopHomepage":"",
+  "workshopHostname":"",
   "modules": [
     {
       "type": "concepts",
