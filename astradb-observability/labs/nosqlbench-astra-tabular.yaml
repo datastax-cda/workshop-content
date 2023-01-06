@@ -20,17 +20,10 @@ description: |
 
 
 scenarios:
-  default:
-    schema: run driver=cql tags==phase:schema threads==1 cycles==UNDEF
-    rampup: run driver=cql tags==phase:rampup cycles===TEMPLATE(rampup-cycles,10B) threads=auto
-    main: run driver=cql tags==phase:main cycles===TEMPLATE(main-cycles,100M) threads=auto
-  schema: run driver=cql tags==phase:schema threads==1 cycles==UNDEF
-  rampup: run driver=cql tags==phase:rampup cycles===TEMPLATE(rampup-cycles,10B) threads=auto
-  main: run driver=cql tags==phase:main cycles===TEMPLATE(main-cycles,100M) threads=auto
   astra:
     schema: run driver=cql tags==phase:schema-astra threads==1 cycles==UNDEF
-    rampup: run driver=cql tags==phase:rampup cycles===TEMPLATE(rampup-cycles,1000) threads=auto
-    main: run driver=cql tags==phase:main cycles===TEMPLATE(main-cycles,10000) threads=auto
+    rampup: run driver=cql tags==phase:rampup cycles===TEMPLATE(rampup-cycles,10000) threads=auto
+    main: run driver=cql tags==phase:main cycles===TEMPLATE(main-cycles,1M) threads=auto
 
 params:
   instrument: true
@@ -40,7 +33,6 @@ bindings:
   #
   part_layout: Div(<<partsize:1000>>); ToString() -> String
   clust_layout: Mod(<<partsize:1000>>); ToString() -> String
-  # todo: update these definitions to use the simpler 10,0.1, 20, 0.2, ...
   data0: Add(10); HashedFileExtractToString('data/lorem_ipsum_full.txt',9,11)
   data1: Add(20); HashedFileExtractToString('data/lorem_ipsum_full.txt',18,22)
   data2: Add(30); HashedFileExtractToString('data/lorem_ipsum_full.txt',27,33)
@@ -62,28 +54,6 @@ bindings:
   clust_read: Add(1); Uniform(0,<<partsize:1000000>>)->int; ToString() -> String
 
 blocks:
-  - name: schema
-    tags:
-      phase: schema
-    params:
-      prepared: false
-    statements:
-      - create-keyspace: |
-          create keyspace if not exists <<keyspace:baselines>>
-          WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '<<rf:1>>'}
-          AND durable_writes = true;
-        tags:
-          name: create-keyspace
-      - create-table: |
-          create table if not exists <<keyspace:baselines>>.<<table:tabular>> (
-           part text,
-           clust text,
-           data0 text, data1 text, data2 text, data3 text,
-           data4 text, data5 text, data6 text, data7 text,
-           PRIMARY KEY (part,clust)
-          );
-        tags:
-          name: create-table
   - name: schema-astra
     tags:
       phase: schema-astra
@@ -112,17 +82,6 @@ blocks:
           values ({part_layout},{clust_layout},{data0},{data1},{data2},{data3},{data4},{data5},{data6},{data7})
         tags:
           name: rampup-insert
-  - name: verify
-    tags:
-      phase: verify
-      type: read
-    params:
-      cl: <<read_cl:LOCAL_QUORUM>>
-    statements:
-      - verify-select: |
-          select * from <<keyspace:baselines>>.<<table:tabular>> where part={part_layout} and clust={clust_layout}
-        tags:
-          name: verify-select
   - name: main-read
     tags:
       phase: main

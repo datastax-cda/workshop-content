@@ -8,14 +8,13 @@ In this lab we will setup Astra DB third party metrics exporting, and ship metri
 You will need the following information to enable metrics export from Astra DB. 
 ```yaml
 remote_write:
-- url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
+- url: https://prometheus-prod-***********.grafana.net/api/prom/push
   basic_auth:
     username: <Your Grafana Cloud Prometheus Username>
     password: <Your Grafana Cloud API Key>
 ``` 
 
-It can be found here
-
+##### Prometheus URL Info
 <img alt="find urls" height="880" src="../images/01-send-metrics.jpg" width="1000"/>
 
 ### Generating an API Key
@@ -29,6 +28,19 @@ Select the database you created in the prerequsites, and select the `Settings` t
 <img alt="settings" height="730" src="../images/03-astra-settings.jpg" width="1000"/>
 
 #### Add Destination
-<img height="730" src="../images/04-astra-add-destination.jpg" width="1000">
+<img alt="destination" height="730" src="../images/04-astra-add-destination.jpg" width="1000">
 
-#### 
+#### Enter Prometheus Info
+Retrieve the Grafana Cloud `username` and `API Key` above and fill in the `Prometheus Username` and `Prometheus Password` respectively.
+
+Use the `Prometheus Write Endpoint` URL as noted in the [Generating an API Key]() section above.
+
+<img src="../images/05-astra-prom-info.jpg" alt="prom info" width="1000" height="738">
+
+## Grafana Dashboard Setup
+### Import Dashboard
+### Send Data to Astra & Validate Metrics
+## Grafana Alerting Setup
+### Import Default Alerts
+### Send Data to Astra & Validate Alerts
+[//]: # (TODO: Create nsbench test that stresses astra somewhat)
