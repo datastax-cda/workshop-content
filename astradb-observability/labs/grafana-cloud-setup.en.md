@@ -19,6 +19,8 @@ remote_write:
 
 ### Generating an API Key
 Select `Generate now` under the section *Password / API Key* and follow the steps. Be sure to save the API key for later steps, as you will not be able to retrieve it after navigating away from this screen.
+
+Ensure the API Key has the `Role` of `MetricsPublisher`
 #### Generate API Key
 <img alt="generate-key" height="880" src="../images/02-url-user-key.jpg" width="1000"/>
 
