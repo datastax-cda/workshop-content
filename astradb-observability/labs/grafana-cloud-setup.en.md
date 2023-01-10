@@ -18,7 +18,7 @@ remote_write:
 <img alt="find urls" height="880" src="../images/01-send-metrics.jpg" width="1000"/>
 
 ### Generating an API Key
-Select `Generate now` under the section *Password / API Key* and follow the steps.
+Select `Generate now` under the section *Password / API Key* and follow the steps. Be sure to save the API key for later steps, as you will not be able to retrieve it after navigating away from this screen.
 #### Generate API Key
 <img alt="generate-key" height="880" src="../images/02-url-user-key.jpg" width="1000"/>
 
@@ -38,9 +38,16 @@ Use the `Prometheus Write Endpoint` URL as noted in the [Generating an API Key](
 <img src="../images/05-astra-prom-info.jpg" alt="prom info" width="1000" height="738">
 
 ## Grafana Dashboard Setup
+<img src="../images/06-grafana-dashboard.jpg" alt="prom info" width="1000" height="650">
+
 ### Import Dashboard
-### Send Data to Astra & Validate Metrics
-## Grafana Alerting Setup
-### Import Default Alerts
-### Send Data to Astra & Validate Alerts
-[//]: # (TODO: Create nsbench test that stresses astra somewhat)
+<img src="../images/07-grafana-dashboard-import.jpg" alt="prom info" width="1000" height="552">
+
+Copy the entire `JSON` body from the file `labs/grafana-astra-dashboard.json` and paste into `Import via panel json`. 
+
+<img src="../images/08-grafana-import-json.jpg" alt="prom info" width="1000" height="552">
+
+### Working Metrics
+You should begin to see metrics flowing to your dashboard that roughly resembles the Astra UI Health Tab. 
+
+<img src="../images/09-grafana-working-dashboard.jpg" alt="prom info" width="1000" height="552">
