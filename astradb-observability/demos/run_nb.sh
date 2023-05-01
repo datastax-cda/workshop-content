@@ -17,7 +17,7 @@ echo "Password" $PASSWORD
 echo "Token" $TOKEN
 echo "Keyspace" $KEYSPACE
 
-curl -L -o nb.jar https://github.com/nosqlbench/nosqlbench/releases/download/nosqlbench-4.15.104/nb.jar
+#curl -L -o nb.jar https://github.com/nosqlbench/nosqlbench/releases/download/nosqlbench-4.15.104/nb.jar
 
 BUNDLEDOWNLOAD=$(curl -s --request POST "https://api.astra.datastax.com/v2/databases/$DBID/secureBundleURL" --header "Authorization: Bearer $TOKEN" | jq -r '.downloadURL')
 
